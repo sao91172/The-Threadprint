@@ -1,0 +1,86 @@
+@import url("../../global.css");
+
+.homeContainer {
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+  height:auto;
+  width: 100%;
+  padding: 49px 60px
+}
+.fontPic {
+  display: flex;
+  align-items: center;
+  gap:97px;
+  flex: 0 0 auto;
+  flex-direction: column;
+  position: relative;
+  font-family: "Neue Haas Display Light", Helvetica, sans-serif;
+  max-width: 326px;
+}
+.buttonFrame {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap:50px;
+  flex-direction: column;
+position: relative;
+}
+.buttonStyle {
+  font-family: "Neue Haas Display Bold", Helvetica, sans-serif;
+  background-color: transparent;
+  border-color: #000000;
+  border: 1px solid;
+  border-radius: 20px;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 10px;
+}
+
+.buttonStyle:hover {
+  font-family: "Neue Haas Display Bold", Helvetica, sans-serif;
+  background-color: black;
+  color:whitesmoke;
+}
+.pStyle {
+  font-family: "Neue Haas Display Light", Helvetica, sans-serif;
+  display: flex;
+  align-items: flex-start;
+  align-self: flex-start;
+}
+
+.threadprintImage {
+  align-self: center;
+  display: inline-flex;
+  position: relative;
+  white-space: nowrap;
+  gap:20px;
+}
+/* 
+.h1Style {
+  font-family: "Neue Haas Display Medium", Helvetica, sans-serif;
+  font-size: 68px;
+  position: relative;
+  font-weight: 500;
+  transform:rotate(-90deg);
+  white-space: nowrap;
+  text-transform: uppercase;
+} */
+.imgStyleSign {
+  height: auto;
+  /* width:30%;
+  height:10%; */
+  width: 90%;
+  height:100%;
+  max-height:876px;
+  max-width:101px;
+}
+.imgStyle {
+  height: auto;
+  width: 90%;
+  height:100%;
+  max-width: 568px;
+  max-height: 926px;
+  object-fit: cover;
+  /* positon: fixed; */
+}

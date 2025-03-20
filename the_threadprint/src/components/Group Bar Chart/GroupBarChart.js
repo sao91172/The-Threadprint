@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useRef, useState } from "react";
 import * as d3 from "d3"; //D3.js
-import "./GroupBarChart.css";
+import styles from "./GroupBarChart.module.css";
 
 const GroupBarChart = () => {
   const [data, setData] = useState([]); //useState is used to keep track of the state
@@ -24,7 +24,7 @@ const GroupBarChart = () => {
 
         //Extract unique years
         const uniqueYears = [
-          ...new Set(jsonData.map((d) => d.production_year)),
+          ...new Set(jsonData.map((d) => d.Production_Year)),
         ].sort();
         setSelectedYear(uniqueYears[0]); // Default to first year
       })
@@ -179,7 +179,7 @@ const GroupBarChart = () => {
       )
       .attr("fill", (d) => colorScale(d.productType))
       .on("mouseover", (event, d) => {
-        console.log("Hovered Data:", d); // Check the structure of d
+        //console.log("Hovered Data:", d); // Check the structure of d
         const companyName = d3.select(event.target.parentNode).datum().company;
 
         tooltip.style("visibility", "visible").html(`
@@ -187,13 +187,13 @@ const GroupBarChart = () => {
             <strong>Product Type:</strong> ${d.productType} <br/>
             <strong>Greenhouse Gas Emissions:</strong> ${d3.format(".2f")(
               d.Greenhouse_Gas_Emissions
-            )} kg CO₂ <br/>
+            )} tCO₂e <br/>
             <strong>Pollutants Emitted:</strong> ${d3.format(".2f")(
               d.Pollutants_Emitted
-            )} units <br/>
+            )} kg <br/>
             <strong>Water Consumption:</strong> ${d3.format(".2f")(
               d.Water_Consumption
-            )} L <br/>
+            )} m³ <br/>
             <strong>Energy Consumption:</strong> ${d3.format(".2f")(
               d.Energy_Consumption
             )} kWh <br/>
@@ -268,13 +268,15 @@ const GroupBarChart = () => {
       .attr("y", 9)
       .attr("dy", "0.35em")
       .style("fill", "#f0f0f0")
-      .text((d) => d);
+      .text((d) => d)
+      .text((d) => d.replace(/_/g, " "));
     // Cleanup function ensures SVG is cleared on unmount or re-render
     return () => svg.selectAll("*").remove();
   }, [data, dimensions.height, dimensions.width, selectedYear, filteredData]);
 
   return (
-    <div className="div-chart">
+    <div className={styles.chartContainer}>
+      <div className="div-chart">
       <h1>Comparative Sales Revenue by Company and Product Type </h1>
       <label>Filter by Year:</label>
       <select
@@ -291,8 +293,10 @@ const GroupBarChart = () => {
         ))}
       </select>
 
-      <svg ref={svgRef}></svg>
+      <svg className={styles.svgContainer} ref={svgRef}></svg>
     </div>
+    </div>
+    
   );
 }; //GroupBarChart
 

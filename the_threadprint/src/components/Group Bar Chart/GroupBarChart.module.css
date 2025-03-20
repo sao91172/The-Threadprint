@@ -1,4 +1,4 @@
-body {
+.chartContainer {
     background-color: black;
     color: whitesmoke;
     font-family: poppins;
@@ -6,6 +6,9 @@ body {
     font-weight: 300;
     text-transform: uppercase;
     gap: 70px;
+}
+.svgContainer {
+    background-color: black
 }
 /* .div-chart {
     display: flex;

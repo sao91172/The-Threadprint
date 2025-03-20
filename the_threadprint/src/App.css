@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 
 .App-logo {
@@ -36,3 +36,32 @@
     transform: rotate(360deg);
   }
 }
+
+/* @import url("./global.css");
+
+.home-container {
+  display: flex;
+  gap:50px;
+  align-items: flex-end;
+  height:auto;
+  width: 100%;
+  padding: 49px 60px
+}
+.font-pic {
+  display: flex;
+  align-items: center;
+  gap:97px;
+  flex: 0 0 auto;
+  flex-direction: column;
+  position: relative;
+  font-family: "Neue Haas Display Light", Helvetica, sans-serif;
+  max-width: 326px;
+}
+.button-frame {
+  align-items: flex-start;
+  justify-content: center;
+  display: flex;
+  gap:50px;
+  flex-direction: column;
+position: relative;
+} */
